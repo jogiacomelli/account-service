@@ -9,10 +9,11 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
+@SequenceGenerator(name = "account_seq", sequenceName="ACCOUNT_SEQ", initialValue = 100000, allocationSize = 6)
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_seq")
     private Long number;
 
     @NotNull
