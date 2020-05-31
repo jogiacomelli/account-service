@@ -21,11 +21,6 @@ public class AccountController {
         return ResponseEntity.ok().body(service.getAll());
     }
 
-    @PostMapping
-    public ResponseEntity<Account> create(@RequestBody UserDTO user) {
-        return ResponseEntity.ok().body(service.createAccountToUser(user));
-    }
-
     @GetMapping("/{number}")
     public ResponseEntity<Account> get(@PathVariable Long number) {
         return ResponseEntity.ok().body(service.get(number)
